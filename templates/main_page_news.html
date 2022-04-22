@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel='stylesheet' type='text/css' href='../static/css/style.css'>
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar">
+    LOGO
+    <div class="logo">Гійченська ЗС0</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+            <li><a href="/">Головна</a></li>
+            <li><a href="/">Розклад</a></li>
+            <li class="services">
+                <a href="/">Інформація</a>
+                <!-- DROPDOWN MENU -->
+                <ul class="dropdown">
+                    <li><a href="/">Dropdown 1 </a></li>
+                    <li><a href="/">Dropdown 2</a></li>
+                    <li><a href="/">Dropdown 2</a></li>
+                    <li><a href="/">Dropdown 3</a></li>
+                    <li><a href="/">Dropdown 4</a></li>
+                </ul>
+            </li>
+            <li><a href="/">Контакти</a></li>
+            <li><a href="/">Про Школу</a></li>
+        </div>
+    </ul>
+</nav>
+
+
+{% for i in news %}
+    <div class="blog-card alt">
+        <div class="meta">
+
+            <div class="photo">
+                {% if i.photo %}
+                    <img src="{{ i.photo.url }}" width="280" height="280" alt="">
+                 {% else %}
+                    <img src="https://picsum.photos/seed/picsum/300/250" alt="">
+                {% endif %}
+            </div>
+            <ul class="details">
+                <li class="author"><a href="#">{{ i.return_name_author }}</a></li>
+                <li class="date">{{ i.created_at }}</li>
+            </ul>
+        </div>
+        <div class="description">
+            <h2>{{ i.title }}</h2>
+            <p>{{ i.content }}</p>
+            <p class="read-more">
+                <a href="#">Детальніше</a>
+            </p>
+        </div>
+
+    </div>
+{% endfor %}
+</body>
+</html>
+
+
