@@ -12,7 +12,10 @@ class News(models.Model):
     is_published = models.BooleanField(default=True)
 
     def return_name_author(self):
-        return self.author.all().__str__()
+        if type(self.author.get()) == 'class':
+            #return type(self.author.get())
+            return self.author.get()
+        return 'Admin'
 
 
     def get_absolure_url(self):

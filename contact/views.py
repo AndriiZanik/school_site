@@ -1,4 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.urls import reverse_lazy
+
 from contact.forms import ResponseForm
 from django.views.generic import CreateView
 
@@ -6,6 +8,7 @@ from django.views.generic import CreateView
 class ContactForm(CreateView):
     form_class = ResponseForm
     template_name = 'contacts_page.html'
+    success_url = reverse_lazy('main_page')
 
 
 #
