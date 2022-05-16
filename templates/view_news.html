@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel='stylesheet' type='text/css' href='../static/css/style.css'>
+    <title>{% block title %}School site{% endblock %}</title>
+</head>
+<body>
+{% include 'inc/_navbar.html' %}
+
+{% block content %}
+    <div class="blog-card alt">
+        <div class="meta">
+
+            <div class="photo">
+                {% if news_item.photo %}
+                    <img src="{{ object.photo.url }}" width="280" height="280" alt="">
+                {% else %}
+                    <img src="https://picsum.photos/seed/picsum/300/250" alt="">
+                {% endif %}
+            </div>
+            <ul class="details">
+                <li class="author"><a href="#">{{ object.return_name_author }}</a></li>
+                <li class="date">{{ object.created_at }}</li>
+            </ul>
+        </div>
+        <div class="description">
+            <h2>{{ object.title }}</h2>
+            <p>{{ object.content }}</p>
+            <p class="read-more">
+                <a href="#">Детальніше</a>
+            </p>
+        </div>
+
+    </div>
+{% endblock %}
+</body>
+</html>
