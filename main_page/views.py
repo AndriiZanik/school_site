@@ -1,8 +1,5 @@
-from django.shortcuts import render
-from django.views.generic import ListView
-from .models import News
 from django.views.generic import ListView,DeleteView
-from .models import News
+from .models import News,Author
 
 
 class MainNews(ListView):
@@ -22,6 +19,10 @@ class MainNews(ListView):
 class ViewNews(DeleteView):
     model = News
     template_name = 'view_news.html'
+
+class ViewAuthor(DeleteView):
+    model = Author
+    template_name = 'view_author.html'
 
 
 # def get_news(request, news_id):

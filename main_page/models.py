@@ -12,13 +12,9 @@ class News(models.Model):
     is_published = models.BooleanField(default=True)
 
     def return_name_author(self):
-        if type(self.author.get()) == 'class':
-            #return type(self.author.get())
-            return self.author.get()
-        return 'Admin'
+        return self.author.get()
 
-
-    def get_absolure_url(self):
+    def get_absolute_url(self):
         return reverse('news',kwargs={'pk':self.pk})
 
     class Meta:
@@ -27,7 +23,13 @@ class News(models.Model):
         ordering = ['-created_at']
 
 class Author(models.Model):
-    full_name = models.CharField(max_length=20)
+    full_name = models.CharField(max_length=30)
+    age = models.IntegerField(default=1)
+    position = models.CharField(default='',max_length=30)
+    about_him = models.TextField(default=' ')
+    photo_author = models.ImageField(blank=True, upload_to='photos/%Y/%m/%d')
+    want_to_publish = models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.full_name
