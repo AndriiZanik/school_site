@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class News(models.Model):
@@ -12,6 +13,10 @@ class News(models.Model):
 
     def return_name_author(self):
         return self.author.all().__str__()
+
+
+    def get_absolure_url(self):
+        return reverse('news',kwargs={'pk':self.pk})
 
     class Meta:
         verbose_name = 'News'

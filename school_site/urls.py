@@ -22,7 +22,7 @@ import main_page.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(main_page.urls), name='main'),
+    path('', include(main_page.urls), name='main_page'),
 ]
 
 
