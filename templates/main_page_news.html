@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for i in news %}
+        <div class="blog-card alt">
+            <div class="meta">
+
+                <div class="photo">
+                    {% if i.photo %}
+                        <img src="{{ i.photo.url }}" width="280" height="280" alt="">
+                    {% else %}
+                        <img src="https://picsum.photos/seed/picsum/300/250" alt="">
+                    {% endif %}
+                </div>
+                <ul class="details">
+                    <li class="author"><a href="http://127.0.0.1:8000/author/{{i.return_author_id}}">{{ i.return_name_author }}</a></li>
+                    <li class="date">{{ i.created_at }}</li>
+                </ul>
+            </div>
+            <div class="description">
+                <h2>{{ i.title }}</h2>
+                <p>{{ i.content }}</p>
+                <p class="read-more">
+                    <a href="http://127.0.0.1:8000/news/{{i.pk}}">Детальніше</a>
+                </p>
+            </div>
+
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
