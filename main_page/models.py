@@ -14,6 +14,9 @@ class News(models.Model):
     def return_name_author(self):
         return self.author.get()
 
+    def return_author_id(self):
+        return self.pk-6
+
     def get_absolute_url(self):
         return reverse('news',kwargs={'pk':self.pk})
 
@@ -28,8 +31,10 @@ class Author(models.Model):
     position = models.CharField(default='',max_length=30)
     about_him = models.TextField(default=' ')
     photo_author = models.ImageField(blank=True, upload_to='photos/%Y/%m/%d')
+    email = models.EmailField(default='email@gmail.com')
+    phone_number = models.CharField(max_length=12,default='+380000000000')
+    address = models.CharField(max_length=200,default='Ukraine')
     want_to_publish = models.BooleanField(default=True)
-
 
     def __str__(self):
         return self.full_name
