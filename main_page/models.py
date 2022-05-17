@@ -15,7 +15,9 @@ class News(models.Model):
         return self.author.get()
 
     def return_author_id(self):
-        return self.pk-6
+        name = self.author.get()
+        id = self.author.get(full_name=name)
+        return id.pk
 
     def get_absolute_url(self):
         return reverse('news',kwargs={'pk':self.pk})
