@@ -1,11 +1,13 @@
 from django.views.generic import ListView,DeleteView
 from .models import News,Author
+from django.core.paginator import Paginator
 
 
 class MainNews(ListView):
     model = News
     template_name = 'main_page_news.html'
     context_object_name = 'news'
+    paginate_by = 3
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(MainNews, self).get_context_data()
