@@ -1,7 +1,6 @@
 from django.views.generic import ListView,DeleteView
 from .models import News,Author
-from django.core.paginator import Paginator
-
+from django.db.models import Q
 
 class MainNews(ListView):
     model = News
@@ -25,6 +24,18 @@ class ViewNews(DeleteView):
 class ViewAuthor(DeleteView):
     model = Author
     template_name = 'view_author.html'
+
+class SearchResultsView(ListView):
+    model = News
+    template_name = 'search_results.html'
+    paginate_by = 3
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = News.objects.filter(
+            Q(title__icontains=query) | Q(content__icontains=query)
+        )
+        return object_list
 
 
 # def get_news(request, news_id):

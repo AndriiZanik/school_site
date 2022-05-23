@@ -18,7 +18,7 @@
         </div>
         <div class="description">
             <h2>{{ object.title }}</h2>
-            <p>{{ object.content }}</p>
+            <p>{{ object.content|slice: "2" }}</p>
             <p class="read-more">
                 <a href="#">Детальніше</a>
             </p>

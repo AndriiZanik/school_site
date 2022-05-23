@@ -8,10 +8,12 @@
     <link rel='stylesheet' type='text/css' href='/static/css/style.css'>
     <link rel='stylesheet' type='text/css' href='/static/css/_footer.css'>
     <link rel='stylesheet' type='text/css' href='/static/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='/static/css/search_form.css'>
     <title>{% block title %}School site{% endblock %}</title>
 </head>
 <body>
 {% include 'inc/_navbar.html' %}
+{% include 'inc/search.html' %}
 
 {% block content %} {% endblock %}
 
