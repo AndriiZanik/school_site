@@ -13,4 +13,5 @@ urlpatterns = [
     path('contacts/', include(contact.urls)),
     path('info/', include(info.urls)),
     path('search/', SearchResultsView.as_view(), name='search_results'),
+    path('about_us/', AboutUs.as_view(), name='about_us'),
 ]

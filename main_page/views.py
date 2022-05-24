@@ -1,4 +1,4 @@
-from django.views.generic import ListView,DeleteView
+from django.views.generic import ListView,DeleteView,View,TemplateView
 from .models import News,Author
 from django.db.models import Q
 
@@ -16,6 +16,8 @@ class MainNews(ListView):
     def get_queryset(self):
         return News.objects.filter(is_published=True)
 
+class AboutUs(TemplateView):
+    template_name = 'about_us.html'
 
 class ViewNews(DeleteView):
     model = News
