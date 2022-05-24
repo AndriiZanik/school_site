@@ -2,8 +2,10 @@ from django.urls import path, include
 
 import contact
 import info
+import schedule
 from contact import urls
 from info import urls
+from schedule import urls
 from .views import *
 
 urlpatterns = [
@@ -14,4 +16,5 @@ urlpatterns = [
     path('info/', include(info.urls)),
     path('search/', SearchResultsView.as_view(), name='search_results'),
     path('about_us/', AboutUs.as_view(), name='about_us'),
+    path('schedule/', include(schedule.urls)),
 ]
