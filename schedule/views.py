@@ -1,8 +1,14 @@
 from django.views.generic import ListView,DeleteView,View,TemplateView
+from schedule.models import Classes,DayOfWeak,Subjects
 from django.db.models import Q
 
-class Shedule(TemplateView):
-     template_name = 'schedule.html'
+class Schedule(ListView):
+     model = Classes
+     template_name = 'main_schedule.html'
+
+class ViewSchedule(DeleteView):
+      model = Classes
+      template_name = 'schedule.html'
 
 #
 # class MainNews(ListView):

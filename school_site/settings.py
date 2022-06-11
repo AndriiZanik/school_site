@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main_page.apps.MainPageConfig',
     'contact.apps.ContactConfig',
     'info.apps.InfoConfig',
+    'schedule.apps.SheduleConfig',
 ]
 
 MIDDLEWARE = [

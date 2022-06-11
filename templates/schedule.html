@@ -1,18 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="sidenav">
-        <a href="#">1-class</a>
-        <a href="#">2-class</a>
-        <a href="#">3-class</a>
-        <a href="#">4-class</a>
-        <a href="#">5-class</a>
-        <a href="#">6-class</a>
-        <a href="#">7-class</a>
-        <a href="#">8-class</a>
-        <a href="#">9-class</a>
-        <a href="#">10-class</a>
-        <a href="#">11-class</a>
-    </div>
+     {% include 'inc/_sidebar.html' %}
 
     <div class="schedule">
         <table border="5" cellspacing="0" align="center">
@@ -49,16 +37,16 @@
             <tr>
                 <td class="cell">
                     <b>Monday</b></td>
-                <td class="cell">Eng</td>
-                <td class="cell">Mat</td>
-                <td class="cell">Che</td>
+                <td class="cell">Lab</td>
+                <td class="cell">Sport</td>
+                <td class="cell">Math</td>
                 <td rowspan="6" align="center" height="50">
                     <h2>L<br>U<br>N<br>C<br>H</h2>
                 </td>
+                <td class="cell">Chr</td>
                 <td class="cell">Eng</td>
-                <td class="cell">Mat</td>
-                <td class="cell">Che</td>
-                <td class="cell">Phy</td>
+                <td class="cell">IT</td>
+                <td class="cell"></td>
             </tr>
             <tr>
                 <td class="cell">

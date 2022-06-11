@@ -5,15 +5,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel='stylesheet' type='text/css' href='/static/css/style.css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/_footer.css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/style_for_forms.css'>
-    <link rel='stylesheet' type='text/css' href='/static/bootstrap/css/bootstrap.min.css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/search_form.css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/for_schedule.css'>
-    <link rel='stylesheet' type='text/css' href='/static/css/style_for_sidebar.css'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
-
+    {% include 'inc/_includes_css.html' %}
     <title>{% block title %}School site{% endblock %}</title>
 </head>
 <body>
@@ -25,16 +17,9 @@
 {% endif %}
 {% include 'inc/_footer.html' %}
 
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.validate.min.js"></script>
-<script src="/js/main.js"></script>
 </body>
 </html>
 
-
-{#    <link rel="stylesheet" href="fonts/icomoon/style.css">#}
-
+{% include 'inc/_includes_js.html' %}
 
 

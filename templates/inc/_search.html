@@ -1,12 +1,10 @@
 <div class="search_form">
-    <label for="site-search">Search the site:</label>
-    <form action="{% url 'search_results' %}" method="get">
-        <input name="q" type="search" placeholder="Search...">
-        <button class="button_search" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}" method="get">>
+        <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <div class="button_search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
     </form>
 </div>
-
-
-
 
 
